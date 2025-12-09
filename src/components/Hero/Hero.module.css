@@ -1,14 +1,15 @@
 @import "../../vars.css";
 
+/* ---------- Base ---------- */
+
 .container {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 49px;
+  margin: 50px 10%;
   z-index: 1;
-  margin-left: 10%;
-  margin-right: 10%;
+  gap: 40px;
 }
 
 .content {
@@ -37,6 +38,7 @@
   font-size: 30px;
   font-family: var(--font-roboto);
   margin-bottom: 52px;
+  max-width: 600px;
 }
 
 .contactBtn {
@@ -44,14 +46,16 @@
   background-color: var(--color-primary);
   color: var(--color-text);
   border-radius: 100px;
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 600;
-  padding: 17px 26px;
+  padding: 15px 26px;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
 }
 
 .heroImg {
-  width: 50%;
+  width: 40%;
+  max-width: 450px;
+  border-radius: 50px;
   z-index: 1;
 
   animation-name: floating;
@@ -60,23 +64,18 @@
   animation-timing-function: ease-in-out;
 }
 
+/* Floating animation */
 @keyframes floating {
-  0% {
-    transform: translate(0, 0px);
-  }
-  50% {
-    transform: translate(0, 10px);
-  }
-  100% {
-    transform: translate(0, -0px);
-  }
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(0, 10px); }
+  100% { transform: translate(0, 0); }
 }
 
+/* Blurs de fundo */
 .topBlur {
   position: absolute;
   width: 50vw;
   height: 50vw;
-  min-width: 350px;
   min-width: 350px;
   top: -128px;
   left: -10vw;
@@ -90,7 +89,6 @@
   position: absolute;
   width: 70vw;
   height: 50vw;
-  min-width: 350px;
   min-width: 250px;
   top: 246px;
   right: -25vw;
@@ -100,12 +98,75 @@
   z-index: 0;
 }
 
-@media screen and (max-width: 830px) {
+/* ---------- Telas médias (tablets) ---------- */
+@media screen and (max-width: 1024px) {
   .container {
+    margin: 40px 6%;
     flex-direction: column-reverse;
+    text-align: center;
   }
 
   .content {
     align-items: center;
+  }
+
+  .title {
+    font-size: 56px;
+  }
+
+  .description {
+    font-size: 24px;
+  }
+
+  .heroImg {
+    width: 60%;
+    max-width: 380px;
+  }
+}
+
+/* ---------- Telas pequenas (celulares) ---------- */
+@media screen and (max-width: 768px) {
+  .container {
+    margin: 30px 4%;
+    gap: 30px;
+  }
+
+  .title {
+    font-size: 45px;
+    margin-bottom: 20px;
+  }
+
+  .description {
+    font-size: 20px;
+    margin-bottom: 35px;
+  }
+
+  .contactBtn {
+    font-size: 22px;
+    padding: 14px 22px;
+  }
+
+  .heroImg {
+    width: 75%;
+  }
+}
+
+/* ---------- Telas muito pequenas ---------- */
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 36px;
+  }
+
+  .description {
+    font-size: 18px;
+  }
+
+  .contactBtn {
+    font-size: 18px;
+    padding: 12px 20px;
+  }
+
+  .heroImg {
+    width: 90%;
   }
 }

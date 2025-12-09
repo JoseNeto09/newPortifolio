@@ -6,21 +6,19 @@ import { getImageUrl } from "../../utils";
 export const About = () => {
   return (
     <section className={styles.container} id="about">
-      <h2 className={styles.title}>About</h2>
+      <h2 className={styles.title}>Sobre mim</h2>
       <div className={styles.content}>
-        <img
-          src={getImageUrl("about/aboutImage.png")}
-          alt="Me sitting with a laptop"
-          className={styles.aboutImage}
-        />
         <ul className={styles.aboutItems}>
           <li className={styles.aboutItem}>
             <img src={getImageUrl("about/cursorIcon.png")} alt="Cursor icon" />
             <div className={styles.aboutItemText}>
               <h3>Frontend Developer</h3>
               <p>
-                I'm a frontend developer with experience in building responsive
-                and optimized sites
+                Sou desenvolvedor frontend com experiência na criação de sites
+                responsivos, modernos e otimizados para diferentes dispositivos.
+                Possuo domínio em React, Next.js, integração com APIs REST,
+                estilização com Tailwind CSS e uso de metodologias ágeis. Tenho
+                foco em performance, escalabilidade e experiência do usuário.
               </p>
             </div>
           </li>
@@ -29,8 +27,11 @@ export const About = () => {
             <div className={styles.aboutItemText}>
               <h3>Backend Developer</h3>
               <p>
-                I have experience developing fast and optimised back-end systems
-                and APIs
+                Tenho experiência no desenvolvimento de sistemas back-end
+                rápidos e otimizados, além de APIs, possuindo boa noção das
+                tecnologias envolvidas e capacidade para utilizá-las na prática,
+                realizando integrações e implementações simples quando
+                necessário.
               </p>
             </div>
           </li>
@@ -39,8 +40,9 @@ export const About = () => {
             <div className={styles.aboutItemText}>
               <h3>UI Designer</h3>
               <p>
-                I have designed multiple landing pages and have created design
-                systems as well
+                Já projetei diversas landing pages e desenvolvi sistemas de
+                design completos, criando interfaces consistentes, funcionais e
+                alinhadas às necessidades do usuário.
               </p>
             </div>
           </li>
