@@ -27,10 +27,10 @@ export const Experience = () => {
             return (
               <li key={id} className={styles.historyItem}>
                 <div className={styles.historyItemDetails}>
-                                  <img
-                  src={getImageUrl(historyItem.imageSrc)}
-                  alt={`${historyItem.organisation} Logo`}
-                />
+                  <img
+                    src={getImageUrl(historyItem.imageSrc)}
+                    alt={`${historyItem.organisation} Logo`}
+                  />
                   <h3>{`${historyItem.role} - ${historyItem.organisation}`}</h3>
                   <p>{`${historyItem.startDate} - ${historyItem.endDate}`}</p>
                   <ul>
