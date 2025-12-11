@@ -22,6 +22,8 @@
   margin-top: 14px;
 }
 
+/* ----------------- SKILLS ----------------- */
+
 .skills {
   width: 45%;
   display: flex;
@@ -56,6 +58,8 @@
   font-weight: 500;
 }
 
+/* ----------------- HISTORY ----------------- */
+
 .history {
   width: 45%;
   display: flex;
@@ -68,14 +72,16 @@
   flex-direction: row;
   align-items: center;
   gap: 17px;
-  background: #19376d;
   background: linear-gradient(90deg, #19376d 0%, rgba(25, 55, 109, 0) 100%);
   border-radius: 10px;
-  padding: 24px;
+  padding: 28px;
 }
 
+/* CENTRALIZA AS LOGOS */
 .historyItem img {
-  width: 50px;
+  width: 150px;
+  display: block;
+  margin: 0 auto;
 }
 
 .historyItemDetails {
@@ -92,14 +98,16 @@
   font-weight: 300;
 }
 
+/* REMOVE AS BOLINHAS */
 .historyItemDetails ul {
   margin-top: 6px;
-  list-style-position: inside;
   font-size: 25px;
-  list-style-type: disc;
   margin-left: 17px;
+  list-style: none;
+  padding: 0;
 }
 
+/* ----------------- MOBILE ----------------- */
 @media screen and (max-width: 830px) {
   .content {
     flex-direction: column;
@@ -109,12 +117,34 @@
 
   .skills {
     width: 100%;
-    flex-direction: row;
     justify-content: center;
   }
 
   .history {
     width: 100%;
-    gap: 9px;
+    gap: 18px;
+  }
+
+  .historyItem {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 18px;
+  }
+
+  .historyItem img {
+    width: 60px;
+    margin: 0 auto; /* garante centralização */
+  }
+
+  .historyItemDetails h3 {
+    font-size: 22px;
+  }
+
+  .historyItemDetails p {
+    font-size: 16px;
+  }
+
+  .historyItemDetails ul {
+    font-size: 18px;
   }
 }

@@ -42,10 +42,7 @@ export const Hero = () => {
         <h1 className={styles.title}>Olá, sou José Neto.</h1>
 
         <p className={styles.description}>
-          <TypingEffect text="Sou desenvolvedor front-end com experiência em React, Next.js e Node.js" />
-        </p>
-        <p className={styles.description}>
-          <TypingEffect text="Bacharelado em Ciência da Computação pelo Centro Universitário de João Pessoa (UNIPÊ)." />
+          <TypingEffect text="Sou desenvolvedor front-end com experiência em React Next.js e Node.js, Bacharelado em Ciência da Computação pelo Centro Universitário de João Pessoa (UNIPÊ)." />
         </p>
       </div>
 

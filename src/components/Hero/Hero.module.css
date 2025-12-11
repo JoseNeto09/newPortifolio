@@ -39,6 +39,11 @@
   font-family: var(--font-roboto);
   margin-bottom: 52px;
   max-width: 600px;
+
+  /* 🔥 Evita o layout mexer durante o efeito de digitação */
+  min-height: 80px;
+  display: flex;
+  align-items: center;
 }
 
 .contactBtn {
@@ -88,7 +93,7 @@
 .bottomBlur {
   position: absolute;
   width: 70vw;
-  height: 50vw;
+ 	height: 50vw;
   min-width: 250px;
   top: 246px;
   right: -25vw;
@@ -116,6 +121,7 @@
 
   .description {
     font-size: 24px;
+    min-height: 65px; /* ajuste responsivo */
   }
 
   .heroImg {
@@ -139,6 +145,7 @@
   .description {
     font-size: 20px;
     margin-bottom: 35px;
+    min-height: 55px; /* ajuste responsivo */
   }
 
   .contactBtn {
@@ -159,6 +166,7 @@
 
   .description {
     font-size: 18px;
+    min-height: 50px; /* ajuste responsivo */
   }
 
   .contactBtn {
