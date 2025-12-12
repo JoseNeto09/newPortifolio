@@ -48,15 +48,56 @@
   width: 100%;
   margin-top: 26px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .link {
+  position: relative;
   text-decoration: none;
   color: var(--color-text);
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 600;
-  border-radius: 100px;
-  background: var(--color-primary);
-  padding: 1px 22px;
+
+  padding: 10px 28px;
+  border-radius: 50px;
+
+  /* Gradiente suave */
+  background: linear-gradient(135deg, var(--color-primary), #3e5cb8);
+
+  /* Sombra elegante */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+  /* Transições */
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+/* Brilho suave passando por cima */
+.link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(255, 255, 255, 0.25);
+  transform: skewX(-20deg);
+
+  transition: 0.6s;
+}
+
+.link:hover::before {
+  left: 120%;
+}
+
+/* Ao passar o mouse, aumenta um pouco */
+.link:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* Efeito de clique */
+.link:active {
+  transform: scale(0.96);
 }

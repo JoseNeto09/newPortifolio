@@ -1,51 +1,65 @@
 import React, { useState, useEffect } from "react";
-
 import styles from "./Hero.module.css";
 import { getImageUrl } from "../../utils";
 
-// Componente de digitar/apagar
-const TypingEffect = ({ text, speed = 130, eraseSpeed = 80, delay = 1500 }) => {
+// Componente de digitar -> selecionar -> apagar de uma vez
+const TypingEffect = ({ text, speed = 120, eraseDelay = 1000 }) => {
   const [displayedText, setDisplayedText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
+  const [phase, setPhase] = useState("typing"); // typing | selecting | erasing
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const handleTyping = () => {
-      if (!isDeleting) {
-        if (index < text.length) {
+    let timer;
+
+    if (phase === "typing") {
+      if (index < text.length) {
+        timer = setTimeout(() => {
           setDisplayedText(text.substring(0, index + 1));
           setIndex(index + 1);
-        } else {
-          setTimeout(() => setIsDeleting(true), delay);
-        }
+        }, speed);
       } else {
-        if (index > 0) {
-          setDisplayedText(text.substring(0, index - 1));
-          setIndex(index - 1);
-        } else {
-          setIsDeleting(false);
-        }
+        timer = setTimeout(() => setPhase("selecting"), 800);
       }
-    };
+    }
 
-    const timer = setTimeout(handleTyping, isDeleting ? eraseSpeed : speed);
+    if (phase === "selecting") {
+      timer = setTimeout(() => {
+        setPhase("erasing");
+      }, eraseDelay);
+    }
+
+    if (phase === "erasing") {
+      timer = setTimeout(() => {
+        setDisplayedText("");
+        setIndex(0);
+        setPhase("typing");
+      }, 300); // apaga de uma vez
+    }
+
     return () => clearTimeout(timer);
-  }, [index, isDeleting, text, speed, eraseSpeed, delay]);
+  }, [index, phase, text, speed, eraseDelay]);
 
-  return <span>{displayedText}</span>;
+  return (
+    <span
+      className={`${styles.typingText} ${
+        phase === "selecting" ? styles.selected : ""
+      }`}
+    >
+      {displayedText}
+      <span className={styles.cursor}></span>
+    </span>
+  );
 };
 
 export const Hero = () => {
   return (
     <section className={styles.container}>
       <div className={styles.content}>
-        <h1 className={styles.title}>Olá, sou José Neto.</h1>
-
+        <h1 className={styles.title}>Olá, sou José Lopes.</h1>
         <p className={styles.description}>
-          <TypingEffect text="Sou desenvolvedor front-end com experiência em React Next.js e Node.js, Bacharelado em Ciência da Computação pelo Centro Universitário de João Pessoa (UNIPÊ)." />
+          <TypingEffect text="Sou desenvolvedor front-end com experiência em React, Next.js e Node.js, Bacharelado em Ciência da Computação pelo Centro Universitário de João Pessoa (UNIPÊ)." />
         </p>
       </div>
-
       <img
         src={getImageUrl("hero/heroImage.png")}
         alt="Hero image of me"

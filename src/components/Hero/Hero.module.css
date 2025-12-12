@@ -34,18 +34,62 @@
   -webkit-background-clip: text;
 }
 
+/* ------------------ TEXTO COM QUEBRA DE LINHA ------------------ */
 .description {
   font-size: 30px;
   font-family: var(--font-roboto);
   margin-bottom: 52px;
   max-width: 600px;
 
-  /* 🔥 Evita o layout mexer durante o efeito de digitação */
-  min-height: 80px;
+  /* 🔥 permite quebra de linha */
+  white-space: pre-line;
+
+  /* 🔥 mantém a altura para não mexer o layout */
+  min-height: 120px;
+
+  overflow: hidden;
   display: flex;
   align-items: center;
 }
 
+/* Texto digitado */
+.typingText {
+  display: inline-block;
+
+  /* 🔥 permite que a digitação quebre linha normalmente */
+  white-space: pre-line;
+
+  max-width: 100%;
+  overflow: hidden;
+
+  transition: background 0.2s ease, color 0.2s ease;
+  padding: 3px 4px;
+  border-radius: 6px;
+}
+
+/* seleção */
+.selected {
+  background: rgba(255, 255, 255, 0.3);
+  color: #000;
+}
+
+/* cursor piscando */
+.cursor {
+  display: inline-block;
+  width: 3px;
+  height: 28px;
+  background: var(--color-text);
+  margin-left: 4px;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* BOTÃO */
 .contactBtn {
   text-decoration: none;
   background-color: var(--color-primary);
@@ -57,6 +101,7 @@
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
 }
 
+/* IMAGEM */
 .heroImg {
   width: 40%;
   max-width: 450px;
@@ -76,7 +121,7 @@
   100% { transform: translate(0, 0); }
 }
 
-/* Blurs de fundo */
+/* BLURS */
 .topBlur {
   position: absolute;
   width: 50vw;
@@ -93,7 +138,7 @@
 .bottomBlur {
   position: absolute;
   width: 70vw;
- 	height: 50vw;
+  height: 50vw;
   min-width: 250px;
   top: 246px;
   right: -25vw;
@@ -103,7 +148,7 @@
   z-index: 0;
 }
 
-/* ---------- Telas médias (tablets) ---------- */
+/* ---------- Tablets ---------- */
 @media screen and (max-width: 1024px) {
   .container {
     margin: 40px 6%;
@@ -121,7 +166,11 @@
 
   .description {
     font-size: 24px;
-    min-height: 65px; /* ajuste responsivo */
+    min-height: 100px;
+  }
+
+  .cursor {
+    height: 22px;
   }
 
   .heroImg {
@@ -130,7 +179,7 @@
   }
 }
 
-/* ---------- Telas pequenas (celulares) ---------- */
+/* ---------- Celulares ---------- */
 @media screen and (max-width: 768px) {
   .container {
     margin: 30px 4%;
@@ -144,13 +193,11 @@
 
   .description {
     font-size: 20px;
-    margin-bottom: 35px;
-    min-height: 55px; /* ajuste responsivo */
+    min-height: 90px;
   }
 
-  .contactBtn {
-    font-size: 22px;
-    padding: 14px 22px;
+  .cursor {
+    height: 18px;
   }
 
   .heroImg {
@@ -158,7 +205,7 @@
   }
 }
 
-/* ---------- Telas muito pequenas ---------- */
+/* ---------- Muito pequenas ---------- */
 @media screen and (max-width: 480px) {
   .title {
     font-size: 36px;
@@ -166,12 +213,11 @@
 
   .description {
     font-size: 18px;
-    min-height: 50px; /* ajuste responsivo */
+    min-height: 80px;
   }
 
-  .contactBtn {
-    font-size: 18px;
-    padding: 12px 20px;
+  .cursor {
+    height: 16px;
   }
 
   .heroImg {

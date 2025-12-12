@@ -19,7 +19,7 @@
     "title": "myStore",
     "imageSrc": "projects/mystoreFashion.png",
     "description": "E-comerce Landing Page",
-    "skills": ["React", "styled-components", "TailwindCSS"],
+    "skills": ["React", "Bootstrap", "TailwindCSS","GitHubPages"],
     "demo": "https://joseneto09.github.io/myStore/",
     "source": "https://www.github.com"
   }

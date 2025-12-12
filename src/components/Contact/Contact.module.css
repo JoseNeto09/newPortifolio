@@ -1,64 +1,133 @@
 @import "../../vars.css";
 
+/* ---------- CONTAINER ---------- */
 .container {
   color: var(--color-text);
   margin-top: 120px;
-  background-color: var(--color-secondary);
+  background: var(--color-secondary);
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  width: 100vw;
-  padding: 58px 10%;
-  gap: 10px;
+  width: 100%;
+  padding: 58px 8%;
+  gap: 20px;
+  box-sizing: border-box;
+  border-radius: 18px;
 }
 
+/* ---------- TEXTOS ---------- */
 .text h2 {
   font-size: 80px;
   font-weight: 700;
   letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--color-text);
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
 }
 
 .text p {
   font-size: 40px;
   font-weight: 400;
   letter-spacing: 2px;
+  opacity: 0.85;
 }
 
+/* ---------- LINKS LIST ---------- */
 .links {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   list-style: none;
   gap: 26px;
+  padding: 0;
 }
 
+/* ---------- ITEM DE LINK ---------- */
 .link {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 18px;
+  padding: 14px 22px;
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  transition: 
+    transform 0.25s ease, 
+    background 0.25s ease, 
+    box-shadow 0.25s ease;
 }
 
+.link:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------- ÍCONES ---------- */
+.link img {
+  width: 32px;
+  height: 32px;
+  opacity: 0.85;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.link:hover img {
+  transform: scale(1.12);
+  opacity: 1;
+}
+
+/* ---------- TEXTO DO LINK ---------- */
 .link a {
   color: var(--color-text);
   text-decoration: none;
-  font-size: 30px;
-  font-weight: 400;
-  letter-spacing: 1.5px;
+  font-size: 28px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
 }
 
+.link:hover a {
+  opacity: 1;
+}
+
+/* ----------------------------------------- */
+/* --------------- MOBILE ------------------ */
+/* ----------------------------------------- */
 @media screen and (max-width: 830px) {
   .container {
     flex-direction: column;
-    gap: 23px;
+    text-align: center;
+    gap: 35px;
+    padding: 40px 5%;
   }
 
-  .text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .text h2 {
+    font-size: 45px;
+    letter-spacing: 2px;
+  }
+
+  .text p {
+    font-size: 22px;
   }
 
   .links {
     align-items: center;
+    gap: 20px;
+  }
+
+  .link {
+    padding: 12px 18px;
+    gap: 16px;
+  }
+
+  .link img {
+    width: 26px;
+    height: auto;
+  }
+
+  .link a {
+    font-size: 18px;
   }
 }
