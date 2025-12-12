@@ -1,26 +1,26 @@
 [
   {
-    "title": "Project A",
-    "imageSrc": "projects/project.png",
-    "description": "This is a project made to learn the latest languages by building an app.",
-    "skills": ["React", "Express", "Node"],
-    "demo": "https://www.example.com",
+    "title": "React Burger",
+    "imageSrc": "projects/reactBurger.png",
+    "description": "Delivey app",
+    "skills": ["TailwindCSS","React", "Vercel", "Javascript", "json"],
+    "demo": "https://buger-react.vercel.app/",
+    "source": "https://github.com/JoseNeto09/BugerReact"
+  },
+  {
+    "title": "Queridas Compras",
+    "imageSrc": "projects/queridasCompras.png",
+    "description": "E-comerce",
+    "skills": ["React", "Express", "Node", "TailwindCSS", "Redux","MongoDB"],
+    "demo": "https://www.queridascompras.com.br/pt-BR",
     "source": "https://www.github.com"
   },
   {
-    "title": "Project B",
-    "imageSrc": "projects/project.png",
-    "description": "This is a project made to learn the latest languages by building an app.",
-    "skills": ["React", "Express", "Node", "Sass"],
-    "demo": "https://www.example.com",
-    "source": "https://www.github.com"
-  },
-  {
-    "title": "Project C",
-    "imageSrc": "projects/project.png",
-    "description": "This is a project made to learn the latest languages by building an app.",
-    "skills": ["React", "Express", "Node"],
-    "demo": "https://www.example.com",
+    "title": "myStore",
+    "imageSrc": "projects/mystoreFashion.png",
+    "description": "E-comerce Landing Page",
+    "skills": ["React", "styled-components", "TailwindCSS"],
+    "demo": "https://joseneto09.github.io/myStore/",
     "source": "https://www.github.com"
   }
 ]
