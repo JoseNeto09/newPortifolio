@@ -3,7 +3,7 @@ import styles from "./Hero.module.css";
 import { getImageUrl } from "../../utils";
 
 // Componente de digitar -> selecionar -> apagar de uma vez
-const TypingEffect = ({ text, speed = 120, eraseDelay = 1000 }) => {
+const TypingEffect = ({ text, speed = 50, eraseDelay = 1000 }) => {
   const [displayedText, setDisplayedText] = useState("");
   const [phase, setPhase] = useState("typing"); // typing | selecting | erasing
   const [index, setIndex] = useState(0);
