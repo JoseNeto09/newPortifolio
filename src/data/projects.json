@@ -12,15 +12,22 @@
     "imageSrc": "projects/queridasCompras.png",
     "description": "E-comerce",
     "skills": ["React", "Express", "Node", "TailwindCSS", "Redux","MongoDB"],
-    "demo": "https://www.queridascompras.com.br/pt-BR",
-    "source": "https://www.github.com"
+    "demo": "https://www.queridascompras.com.br/pt-BR"
+    
   },
   {
     "title": "myStore",
     "imageSrc": "projects/mystoreFashion.png",
     "description": "E-comerce Landing Page",
     "skills": ["React", "Bootstrap", "TailwindCSS","GitHubPages"],
-    "demo": "https://joseneto09.github.io/myStore/",
-    "source": "https://www.github.com"
+    "demo": "https://joseneto09.github.io/myStore/"
+    
+  },
+    {
+    "title": "Kanban",
+    "imageSrc": "projects/kanban.png",
+    "description": "Organizador de Atividades.",
+    "skills": ["React", "Bootstrap","GitHubPages"],
+    "demo": "https://joseneto09.github.io/Kanban/"
   }
 ]
